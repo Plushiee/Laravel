@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 06:45 PM
+-- Generation Time: May 09, 2023 at 01:50 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -160,7 +160,8 @@ INSERT INTO `pelamar` (`nik`, `nama`, `gender`, `tingkat_pendidikan`, `bidang_ke
 (968637, 'Miss Herminia Rogahn', 'qjtu', 'Ad ullam.', 'Praesentium culpa rerum tempora.', NULL, NULL),
 (969953, 'Alan Gleichner', 'oihz', 'In.', 'Voluptatem impedit eligendi.', NULL, NULL),
 (981590, 'Murphy Adams', 'uxur', 'Aut.', 'Exercitationem fugit in sapiente.', NULL, NULL),
-(992933, 'Prof. Terrill Swift DDS', 'ivwz', 'Nemo facilis.', 'Laborum expedita.', NULL, NULL);
+(992933, 'Prof. Terrill Swift DDS', 'ivwz', 'Nemo facilis.', 'Laborum expedita.', NULL, NULL),
+(72210456, 'Tika', 'Pria', 'S1', 'Website', '2023-05-09 04:43:19', '2023-05-09 04:43:19');
 
 --
 -- Indexes for dumped tables

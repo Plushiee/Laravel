@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 06:46 PM
+-- Generation Time: May 09, 2023 at 01:50 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -52,7 +52,8 @@ INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `gender`, `prodi`, `minat`, `creat
 (8, 858401, 'Prof. Jedidiah Price PhD', 'woqi', 'Asperiores.', 'Enim vel.', NULL, NULL),
 (9, 569204, 'Philip Cormier', 'mnob', 'Dicta.', 'Libero voluptatum.', NULL, NULL),
 (10, 419855, 'Kaia Pfannerstill', 'xbcp', 'Eaque blanditiis.', 'Nisi aut voluptatem.', NULL, NULL),
-(11, 443518, 'Nikita Schmitt PhD', 'jchu', 'Atque.', 'Ipsa odit voluptas.', NULL, NULL);
+(11, 443518, 'Nikita Schmitt PhD', 'jchu', 'Atque.', 'Ipsa odit voluptas.', NULL, NULL),
+(12, 72210423, 'Tika', 'Pria', 'Sistem Informasi', 'ai', '2023-05-06 23:12:41', '2023-05-06 23:12:41');
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `migrations`
