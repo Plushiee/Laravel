@@ -41,11 +41,9 @@
           @include('layouts.nav')
         </div>
         <div class="col-md-10">
-          <div class="card text-left mt-4">
-            <div class="card-body vh-100">
-              {{-- Konten Dinamis --}}
-              @yield('content')
-            </div>
+          <div class="card-body vh-100">
+            {{-- Konten Dinamis --}}
+            @yield('content')
           </div>
         </div>
       </div>
