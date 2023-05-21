@@ -7,8 +7,8 @@
                 <form action="/student/simpanmahasiswa" method="POST">
                   @csrf
                     <div class="form-group w-25">
-                      <label>NIM</label>
-                      <input type="number" name= "nim" class="form-control" placeholder="Masukkan NIM ">
+                      <label>NIK</label>
+                      <input type="number" name= "nik" class="form-control" placeholder="Masukkan NIM ">
                     </div>
                     <div class="form-group">
                       <label>Nama</label>
@@ -24,26 +24,26 @@
                       <label>WANITA</label>
                     </div>
                     <div class="form-group">
-                        <label>Prodi</label>
-                        <select name="prodi" class="form-control" >
-                            <option value="0">--Pilih Program Studi--</option>
-                            <option value="Sistem Informasi">Sistem Informasi</option>
-                            <option value="Informatika">Informatika</option>
-                            <option value="Sains Data">Sains Data</option>
-                            <option value="Teknik Komputer">Teknik Komputer</option>
+                        <label>Tinggkat Pendidikan</label>
+                        <select name="tingkat_pendidikan" class="form-control" >
+                            <option value="0">--Pilih Tingkat Pendidikan--</option>
+                            <option value="SMA">SMA</option>
+                            <option value="SMK">SMK</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="Sarjana">Sarjana</option>
                         </select>
                       </div>
-                      <label>Minat</label>
+                      <label>Bidang Keahlian</label>
                     <div class="form-check">
-                      <input type="checkbox" name="minat[]" value="ai" class="form-check-input">
+                      <input type="checkbox" name="bidang_keahlian[]" value="ai" class="form-check-input">
                       <label>Artificial Intelegent</label>
                     </div>
                     <div class="form-check">
-                      <input type="checkbox" name="minat[]" value="web" class="form-check-input">
+                      <input type="checkbox" name="bidang_keahlian[]" value="web" class="form-check-input">
                       <label>Web Engineering</label>
                     </div>
                     <div class="form-check">
-                      <input type="checkbox" name="minat[]" value="dbms" class="form-check-input">
+                      <input type="checkbox" name="bidang_keahlian[]" value="dbms" class="form-check-input">
                       <label>Data Engineering</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

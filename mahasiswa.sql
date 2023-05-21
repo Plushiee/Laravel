@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 06:49 PM
+-- Generation Time: May 21, 2023 at 06:48 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -155,25 +155,6 @@ INSERT INTO `mahasiswa` (`id`, `nik`, `nama`, `gender`, `tingkat_pendidikan`, `b
 (111, 568466, 'Kennedi Ankunding', 'gyjx', 'Ratione.', 'Debitis labore.', NULL, NULL),
 (112, 860426, 'Maxime Schowalter', 'nedm', 'Amet.', 'Iusto facere corrupti.', NULL, NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2023_05_05_130001_create_mahasiswa_table', 1);
-
 --
 -- Indexes for dumped tables
 --
@@ -185,12 +166,6 @@ ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -199,12 +174,6 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

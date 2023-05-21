@@ -14,7 +14,7 @@ class MahasiswaSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             DB::table('mahasiswa')->insert([
                 'nim' => $faker->randomNumber(6, true),
                 'nama' => $faker->name(),

@@ -20,14 +20,14 @@ class PageController extends Controller
 
     public function student() 
     {
-        $mhs = Mahasiswa::paginate(5);
+        $mhs = Mahasiswa::orderBy('id', 'desc')->paginate(10);
         return view('student', ['mhs' => $mhs]);
     }
 
     public function pencarian(Request $request)
     {
         $cari = $request->cari;
-        $mhs = Mahasiswa::where('nama', 'like', '%'.$cari.'%')->paginate();
+        $mhs = Mahasiswa::where('nama', 'like', '%'.$cari.'%')->orWhere('nik', 'like', '%'.$cari.'%')->orderBy('id', 'desc')->paginate(10);
         return view('student', ['mhs' => $mhs]);
     }
 
@@ -39,11 +39,11 @@ class PageController extends Controller
     public function simpanmahasiswa(Request $request){
         $minat = implode("," , $request->get('minat'));
         Mahasiswa::create([
-            'nim' => $request -> nim,
+            'nik' => $request -> nik,
             'nama' => $request -> nama,
             'gender' => $request -> gender,
-            'prodi' => $request -> prodi,
-            'minat' => $minat
+            'tingkat_pendidikan' => $request -> prodi,
+            'bidang_keahlian' => $bidang_keahlian
         ]);
         return redirect('/student');
     }

@@ -13,21 +13,21 @@
             <table class="table table-hover">
                 <thead>
                     <th scope="col">#</th>
-                    <th scope="col">NIM</th>
+                    <th scope="col">NIK</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Minat</th>
+                    <th scope="col">Tingkat Pendidikan</th>
+                    <th scope="col">Bidang Keahlian</th>
                 </thead>
                 <tbody>
                     @foreach ($mhs as $key => $item)
                         <tr>
                             <th scope="row">{{ $mhs->firstItem() + $key }}</th>
-                            <td>{{ $item->nim }}</td>
+                            <td>{{ $item->nik }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->gender }}</td>
-                            <td>{{ $item->prodi }}</td>
-                            <td>{{ $item->minat }}</td>
+                            <td>{{ $item->tingkat_pendidikan }}</td>
+                            <td>{{ $item->bidang_keahlian }}</td>
                         </tr>
                     @endforeach
                 </tbody>
