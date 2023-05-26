@@ -10,10 +10,10 @@ class Mahasiswa extends Model
     protected $table = 'mahasiswa';
 
     protected $fillable = [
-        'nik',
+        'nim',
         'nama',
-        'gennder',
-        'tingkat_pendidikan',
-        'bidang_keahlian'
+        'gender',
+        'prodi',
+        'minat'
     ];
 }

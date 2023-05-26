@@ -36,16 +36,46 @@ class PageController extends Controller
         return view('formulirmahasiswa');
     }
 
-    public function simpanmahasiswa(Request $request){
-        $minat = implode("," , $request->get('minat'));
+    public function simpanmahasiswa(Request $request)
+    {
+        $minat = implode("," ,$request->get('minat'));
         Mahasiswa::create([
-            'nik' => $request -> nik,
+            'nim' => $request -> nim,
             'nama' => $request -> nama,
             'gender' => $request -> gender,
-            'tingkat_pendidikan' => $request -> prodi,
-            'bidang_keahlian' => $bidang_keahlian
+            'prodi' => $request -> prodi,
+            'minat' => $minat
         ]);
         return redirect('/student');
+    }
+
+    public function formedit($id)
+    {
+        $mhs = Mahasiswa::find($id);
+
+        return view('formedit', ['mhs'=>$mhs]);
+    }
+
+    public function update($id, Request $request) 
+    {
+        $minat = implode("," ,$request->get('minat'));
+        $mhs = Mahasiswa::find($id);
+        $mhs -> nim = $request -> nim;
+        $mhs -> nama = $request -> nama;
+        $mhs -> gender = $request -> gender;
+        $mhs -> prodi = $request -> prodi;
+        $mhs -> minat = $minat;
+        $mhs -> save();
+
+        return back()->with('Flash', 'Data berhasil di Update');
+    }
+
+    public function delete($id)
+    {
+        $mhs = Mahasiswa::find($id);
+        $mhs -> delete();
+
+        return back()->with('Flash', 'Data berhasil di Update');
     }
 
     public function contact() 

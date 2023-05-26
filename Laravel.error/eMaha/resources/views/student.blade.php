@@ -10,24 +10,38 @@
             </form>
         </div>
         <div class="card-body">
+            @if (session('Flash')) 
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ session('Flash') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
             <table class="table table-hover">
                 <thead>
                     <th scope="col">#</th>
-                    <th scope="col">NIK</th>
+                    <th scope="col">NIM</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Tingkat Pendidikan</th>
-                    <th scope="col">Bidang Keahlian</th>
+                    <th scope="col">Prodi</th>
+                    <th scope="col">Minat</th>
+                    <th scope="col">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($mhs as $key => $item)
                         <tr>
                             <th scope="row">{{ $mhs->firstItem() + $key }}</th>
-                            <td>{{ $item->nik }}</td>
+                            <td>{{ $item->nim }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->gender }}</td>
-                            <td>{{ $item->tingkat_pendidikan }}</td>
-                            <td>{{ $item->bidang_keahlian }}</td>
+                            <td>{{ $item->prodi }}</td>
+                            <td>{{ $item->minat }}</td>
+                            <td>
+                                <a href="/student/formedit/{{ $item ->id }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/student/delete/{{ $item ->id }}" class="btn btn-danger"><i class="bi bi-x-square"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
