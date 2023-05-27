@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 01:50 PM
+-- Generation Time: May 27, 2023 at 11:04 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -38,7 +38,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2023_05_06_160833_create_pelamar_table', 1);
+(1, '2023_05_06_160833_create_pelamar_table', 1),
+(2, '2023_05_27_020558_create_products_table', 2);
 
 -- --------------------------------------------------------
 
@@ -163,6 +164,33 @@ INSERT INTO `pelamar` (`nik`, `nama`, `gender`, `tingkat_pendidikan`, `bidang_ke
 (992933, 'Prof. Terrill Swift DDS', 'ivwz', 'Nemo facilis.', 'Laborum expedita.', NULL, NULL),
 (72210456, 'Tika', 'Pria', 'S1', 'Website', '2023-05-09 04:43:19', '2023-05-09 04:43:19');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `pdName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `pdName`, `desc`, `gambar`, `created_at`, `updated_at`) VALUES
+(1, 'Coca-Cola', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laboriosam quaerat neque magnam eos dolorem, libero sint dicta veniam eius tempore quod illo cupiditate reiciendis?aa', 'https://us.coca-cola.com/content/dam/nagbrands/us/coke/en/home/coca-cola-original-20oz.png', NULL, '2023-05-26 22:35:26'),
+(2, 'Fanta', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto atque, et iure recusandae voluptas quibusdam minus consequuntur asperiores veniam sed nobis repellendus tenetur beatae eius!', 'https://en.cocacola.co.id/content/dam/journey/id/en/brands/fanta/Fanta_Strawberry-PET-250_234x700.png', NULL, NULL),
+(3, 'Pepsi', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rem iusto quidem veritatis aspernatur! Maxime, dolores adipisci necessitatibus id ipsa perferendis molestiae iure sit nostrum.', 'https://gecoshop.com/5948-large_default/pepsi-bottle-pet-12-x-50-cl.jpg', NULL, NULL),
+(4, 'Teh Pucuk Harum', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, ea? Reiciendis voluptatum laudantium quia similique veritatis porro cupiditate, neque delectus quae aliquid facilis alias odit!', 'https://assets.klikindomaret.com/share/20035484/20035484_1.jpg', NULL, NULL),
+(5, 'Sosro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, animi iure? Odit similique omnis praesentium sapiente dignissimos ducimus aperiam maxime repudiandae animi quis? Excepturi, blanditiis!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-whvO7_Hm0yuYaqG4FoY1b5ATshsox-Wleg&usqp=CAU', NULL, NULL),
+(14, 'Tes', 'Tes', 'https://us.coca-cola.com/content/dam/nagbrands/us/coke/en/home/coca-cola-original-20oz.png', '2023-05-27 00:19:20', '2023-05-27 00:19:20');
+
 --
 -- Indexes for dumped tables
 --
@@ -180,6 +208,12 @@ ALTER TABLE `pelamar`
   ADD PRIMARY KEY (`nik`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -187,7 +221,13 @@ ALTER TABLE `pelamar`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
