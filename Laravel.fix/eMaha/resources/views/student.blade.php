@@ -38,8 +38,8 @@
                             <td>{{ $item->prodi }}</td>
                             <td>{{ $item->minat }}</td>
                             <td>
-                                <a href="/student/formedit/{{ $item ->id }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                <a href="/student/delete/{{ $item ->id }}" class="btn btn-danger"><i class="bi bi-x-square"></i></a>
+                                <a href="/student/formedit/{{ $item ->id }}" class="btn btn-warning btn-link"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/student/delete/{{ $item ->id }}" class="btn btn-danger btn-link"><i class="bi bi-x-square"></i></a>
                             </td>
                         </tr>
                     @endforeach

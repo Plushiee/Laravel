@@ -2,7 +2,7 @@
 @section('title' ,'eMaha - Student Form')
 @section('content')
         <div class="card mt-4">
-            <div class="card-header"></div>
+            <div class="card-header">Tambah Mahasiswa</div>
             <div class="card-body">
                 <form action="/student/simpanmahasiswa" method="POST">
                   @csrf
