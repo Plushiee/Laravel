@@ -31,6 +31,13 @@ Route::get('/student/delete/{id}', 'PageController@delete');
 
 Route::get('/contact', 'PageController@contact');
 
+Route::get('/user', 'AuthController@user');
+
+Route::get('/user/formuliruser', 'AuthController@formuliruser');
+Route::get('/user/simpanuser', 'AuthController@simpanuser');
+
+Route::get('/login', 'AuthController@login');
+
 Route::get('/index', function(){
     return view('index');
 });

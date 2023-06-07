@@ -28,7 +28,7 @@
                   </div>
                 </div>
               </a>
-              <a class="dropdown-item border-top" href="#"><i class="bi bi-gear-fill"></i> Setting</a>
+              <a class="dropdown-item border-top" href="/user"><i class="bi bi-gear-fill"></i> Data Pengguna</a>
               <a class="dropdown-item border-top" href="#"><i class="bi bi-power"></i> Log Out</a>
             </div>
           </div>
