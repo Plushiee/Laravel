@@ -1,13 +1,13 @@
 <div>
-    <form action="" method="post">
+    <form wire:submit.prevent="simpan">
         <div class="form-group">
             <label>Judul</label>
-            <input type="text" name="" class="form-control" placeholder="Masukan Judul">
+            <input wire:model="judul" type="text" name="" class="form-control" placeholder="Masukan Judul">
         </div>
 
         <div class="form-group">
             <label>Deskripsi</label>
-            <textarea name="" id="" cols="30" rows="10"  class="form-control" placeholder="Masukan Deskripsi"></textarea>
+            <textarea wire:model="deskripsi" name="" id="" cols="30" rows="10"  class="form-control" placeholder="Masukan Deskripsi"></textarea>
         </div>
 
         <div class="form-group">

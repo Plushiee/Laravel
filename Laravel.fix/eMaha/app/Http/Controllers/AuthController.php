@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 
@@ -14,12 +15,12 @@ class AuthController extends Controller
         return view('user', ['user' => $user]);
     }
 
-    public function formuliruser ()
+    public function register ()
     {
-        return view('formuliruser');
+        return view('register');
     }
 
-    public function simpanuser (Request $request)
+    public function simpan (Request $request)
     {
         $user = User::create([
             'name' => $request -> name,
@@ -27,12 +28,37 @@ class AuthController extends Controller
             'password' => bcrypt($request -> password)
         ]);
 
-        return redirect('/user');
+        return redirect('/login');
     }
 
     public function login ()
     {
         return view('login');
+    }
+
+    public function ceklogin(Request $request)
+    {
+        $cek = Auth::attempt([
+            'email' => $request -> email, 
+            'password' => $request -> password
+        ]);
+
+        if ($cek) 
+        {
+            return redirect('/');
+        }
+        else 
+        { 
+            return redirect('/login');
+        }
+
+        // return dd($cek);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 
 }

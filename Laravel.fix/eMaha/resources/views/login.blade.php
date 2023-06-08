@@ -1,15 +1,30 @@
-<form action="/user/ceklogin" method="post">
-    @csrf
-    <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel-svg.png" alt="" width="72" height="57">
-    <h1 class="h2 mb-3 fw-normal">Form Login</h1>
-    <div class="form-floating">
-        <input type="email" name="email" class="form-control" id="floatingInput" required autofocus>
-        <label for="floatingInput">Email</label>
+@extends('layouts.starter')
+@section('title' ,'eMaha - Register')
+@section('content')
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="card mt-4 w-25">
+    <div class="card-header bg-primary j d-flex justify-content-center"><strong class="text-light">FORM LOGIN</strong></div>
+        <div class="card-body">
+            <form action="/ceklogin" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="text" name= "email" class="form-control" placeholder="Masukkan Email Pengguna ">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name= "password" class="form-control" placeholder="Masukkan Password Pengguna ">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+              </form>
+
+              <hr>
+
+              <span class="d-flex justify-content-center">ATAU</span>
+
+              <a href="/register" class="btn btn-secondary btn-block mt-4">Register</a>
+          </div>
+      </div>
     </div>
-    <div class="form-floating">
-        <input type="password" name="password" class="form-control" id="floatingInput" required>
-        <label for="floatingInput">Password</label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
-</form>
+</div>
+@endsection

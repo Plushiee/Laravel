@@ -23,13 +23,13 @@
                 <div class="media">
                   <img class="align-self-center mr-3" src="https://upload.wikimedia.org/wikipedia/id/thumb/a/a6/Duta_Wacana.svg/600px-Duta_Wacana.svg.png" height="60"  alt="Generic placeholder image">
                   <div class="media-body">
-                    <h5 class="mt-2">Nikolaus Pastika</h5>
+                    <h5 class="mt-2">{{ Auth::user()->name ?? ''}}</h5>
                     <small><i class="bi bi-emoji-smile"></i> Selamat Siang..</small>
                   </div>
                 </div>
               </a>
               <a class="dropdown-item border-top" href="/user"><i class="bi bi-gear-fill"></i> Data Pengguna</a>
-              <a class="dropdown-item border-top" href="#"><i class="bi bi-power"></i> Log Out</a>
+              <a class="dropdown-item border-top" href="/logout"><i class="bi bi-power"></i> Log Out</a>
             </div>
           </div>
         </div>

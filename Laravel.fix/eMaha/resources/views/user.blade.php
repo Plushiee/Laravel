@@ -1,9 +1,9 @@
 @extends('layouts.main')
-@section('title', 'eMaha - Student')
+@section('title', 'eMaha - User')
 @section('content')
     <div class="card mt-4">
         <div class="card-header">
-            <a name="" class="btn btn-primary" href="/student/formuliruser" role="button"><i class="bi bi-plus-square-fill"></i> ADD PENGGUNA</a>
+            <a name="" class="btn btn-primary" href="/user/formuliruser" role="button"><i class="bi bi-plus-square-fill"></i> ADD PENGGUNA</a>
             <form action="/student/search" method="GET" class="form-inline my-2 my-lg-0 float-right">
                 <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
