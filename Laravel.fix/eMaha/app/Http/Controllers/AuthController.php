@@ -45,11 +45,11 @@ class AuthController extends Controller
 
         if ($cek) 
         {
-            return redirect('/');
+            return redirect('/home');
         }
         else 
         { 
-            return redirect('/login');
+            return redirect('/');
         }
 
         // return dd($cek);
@@ -58,7 +58,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 
 }
