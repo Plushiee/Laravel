@@ -8,8 +8,8 @@
             <form action="/ceklogin" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="text" name= "email" class="form-control" placeholder="Masukkan Email Pengguna ">
+                    <label>NIK</label>
+                    <input type="text" name= "nik_user" class="form-control" placeholder="Masukkan NIK Pengguna ">
                 </div>
                 <div class="form-group">
                   <label>Password</label>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    @livewireStyles
 </head>
 
 <body>
@@ -48,9 +49,10 @@
                 @include('layouts.navbar')
             </div>
 
-            <div class="col-md-6 text-info py-4">
+            <div class="col-md-6 text-primary py-4">
                 {{-- Contents --}}
-                @yield('contents')
+                @livewire('form-task')
+                @livewire('table-task')
             </div>
 
             <div class="col-md-3 text-secondary py-4">
@@ -68,6 +70,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    @livewireScripts
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

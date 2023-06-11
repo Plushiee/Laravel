@@ -8,25 +8,29 @@
             <form action="/simpan" method="POST">
                 @csrf
                 <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" name= "name" class="form-control" placeholder="Masukkan Nama Pengguna ">
-                </div>
-                <div class="form-group">
-                  <label>E-mail</label>
-                  <input type="text" name= "email" class="form-control" placeholder="Masukkan Email Pengguna ">
-                </div>
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" name= "password" class="form-control" placeholder="Masukkan Password Pengguna ">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                  <label>NIK</label>
+                  <input type="text" name= "nik_user" class="form-control" placeholder="Masukkan NIK Pengguna ">
+              </div>
+              <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name= "nama_user" class="form-control" placeholder="Masukkan Nama Pengguna ">
+            </div>
+            <div class="form-group">
+              <label>Nomor Handphone</label>
+              <input type="text" name= "no_hp" class="form-control" placeholder="Masukkan Nomor Handphone Pengguna ">
+          </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" name= "password" class="form-control" placeholder="Masukkan Password Pengguna ">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Register</button>
               </form>
               
               <hr>
 
               <span class="d-flex justify-content-center">ATAU</span>
 
-              <a href="/login" class="btn btn-secondary btn-block mt-4">Log In</a>
+              <a href="/" class="btn btn-secondary btn-block mt-4">Log In</a>
           </div>
       </div>
     </div>

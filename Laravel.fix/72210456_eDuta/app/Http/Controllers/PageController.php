@@ -79,8 +79,8 @@ class PageController extends Controller
         return redirect('Products')->with(['Flash' => $Flash]);
     }
 
-    public function reporting() 
+    public function task() 
     {
-        return view('reporting');
+        return view('task');
     }
 }
