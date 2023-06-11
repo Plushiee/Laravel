@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2023 at 11:04 AM
+-- Generation Time: Jun 11, 2023 at 11:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -39,7 +39,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2023_05_06_160833_create_pelamar_table', 1),
-(2, '2023_05_27_020558_create_products_table', 2);
+(2, '2014_10_12_000000_create_users_table', 2),
+(3, '2023_06_10_162945_create_task_table', 3);
 
 -- --------------------------------------------------------
 
@@ -161,35 +162,53 @@ INSERT INTO `pelamar` (`nik`, `nama`, `gender`, `tingkat_pendidikan`, `bidang_ke
 (968637, 'Miss Herminia Rogahn', 'qjtu', 'Ad ullam.', 'Praesentium culpa rerum tempora.', NULL, NULL),
 (969953, 'Alan Gleichner', 'oihz', 'In.', 'Voluptatem impedit eligendi.', NULL, NULL),
 (981590, 'Murphy Adams', 'uxur', 'Aut.', 'Exercitationem fugit in sapiente.', NULL, NULL),
-(992933, 'Prof. Terrill Swift DDS', 'ivwz', 'Nemo facilis.', 'Laborum expedita.', NULL, NULL),
-(72210456, 'Tika', 'Pria', 'S1', 'Website', '2023-05-09 04:43:19', '2023-05-09 04:43:19');
+(992933, 'Prof. Terrill Swift DDS', 'ivwz', 'Nemo facilis.', 'Laborum expedita.', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Table structure for table `task`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `task` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `pdName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul_task` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi_task` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `task`
 --
 
-INSERT INTO `products` (`id`, `pdName`, `desc`, `gambar`, `created_at`, `updated_at`) VALUES
-(1, 'Coca-Cola', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laboriosam quaerat neque magnam eos dolorem, libero sint dicta veniam eius tempore quod illo cupiditate reiciendis?aa', 'https://us.coca-cola.com/content/dam/nagbrands/us/coke/en/home/coca-cola-original-20oz.png', NULL, '2023-05-26 22:35:26'),
-(2, 'Fanta', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto atque, et iure recusandae voluptas quibusdam minus consequuntur asperiores veniam sed nobis repellendus tenetur beatae eius!', 'https://en.cocacola.co.id/content/dam/journey/id/en/brands/fanta/Fanta_Strawberry-PET-250_234x700.png', NULL, NULL),
-(3, 'Pepsi', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rem iusto quidem veritatis aspernatur! Maxime, dolores adipisci necessitatibus id ipsa perferendis molestiae iure sit nostrum.', 'https://gecoshop.com/5948-large_default/pepsi-bottle-pet-12-x-50-cl.jpg', NULL, NULL),
-(4, 'Teh Pucuk Harum', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, ea? Reiciendis voluptatum laudantium quia similique veritatis porro cupiditate, neque delectus quae aliquid facilis alias odit!', 'https://assets.klikindomaret.com/share/20035484/20035484_1.jpg', NULL, NULL),
-(5, 'Sosro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, animi iure? Odit similique omnis praesentium sapiente dignissimos ducimus aperiam maxime repudiandae animi quis? Excepturi, blanditiis!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-whvO7_Hm0yuYaqG4FoY1b5ATshsox-Wleg&usqp=CAU', NULL, NULL),
-(14, 'Tes', 'Tes', 'https://us.coca-cola.com/content/dam/nagbrands/us/coke/en/home/coca-cola-original-20oz.png', '2023-05-27 00:19:20', '2023-05-27 00:19:20');
+INSERT INTO `task` (`id`, `nama`, `judul_task`, `deskripsi_task`, `created_at`, `updated_at`) VALUES
+(8, 'Niko', 'Repair PC', 'Despro', '2023-06-10 23:58:13', '2023-06-10 23:58:13'),
+(9, 'Tika', 'Pasang Proyektor', 'H.2.1.', '2023-06-10 23:58:38', '2023-06-10 23:58:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nik_user` int(11) NOT NULL,
+  `nama_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `nik_user`, `nama_user`, `no_hp`, `password`, `created_at`, `updated_at`) VALUES
+(1, 72210456, 'Niko', '081289923242', '$2y$10$nDHWEqYgwyIiWcGoiCfhz.fUfwYwWhlMCi3Ylhv0PZbC2u6PwZeWq', '2023-06-09 18:47:01', '2023-06-09 18:47:01');
 
 --
 -- Indexes for dumped tables
@@ -208,10 +227,19 @@ ALTER TABLE `pelamar`
   ADD PRIMARY KEY (`nik`);
 
 --
--- Indexes for table `products`
+-- Indexes for table `task`
 --
-ALTER TABLE `products`
+ALTER TABLE `task`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_nik_user_unique` (`nik_user`),
+  ADD UNIQUE KEY `users_nama_user_unique` (`nama_user`),
+  ADD UNIQUE KEY `users_no_hp_unique` (`no_hp`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -221,13 +249,19 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT for table `task`
 --
-ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+ALTER TABLE `task`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
